@@ -8,4 +8,9 @@ copy/local/envs:
 	cp .env.dev .env
 
 run/flask:
-	poetry run uvicorn main:app --reload
+	poetry run uvicorn app.main:app --reload
+
+run/tests:
+	poetry run pytest
+
+ci: copy/local/envs run/tests

@@ -30,6 +30,11 @@ Create an `.env` file
 make copy/local/envs
 ```
 
+Add a valid personal access token in the `.env` file:
+```
+GITHUB_PERSONAL_ACCESS_TOKEN=<token>
+```
+
 In root project, run:
 ```
 docker-compose up --build
@@ -46,9 +51,9 @@ Install all dependencies
 make install/python
 ```
 
-Create an `.env` file
+Add a valid personal access token:
 ```
-make copy/local/envs
+export GITHUB_PERSONAL_ACCESS_TOKEN=<token>
 ```
 
 Start the project
@@ -56,3 +61,24 @@ Start the project
 make run/flask
 ```
 
+
+## Docs
+Check the API documentation in:
+- [http://localhost:8000/docs](http://localhost:8000/docs)
+
+Also, take a look in a live example in:
+- [http://localhost:8000/github/repos/pytest-dev/pytest/popularity](http://localhost:8000/github/repos/pytest-dev/pytest/popularity)
+
+
+## Testing
+With Poetry environment active, run:
+```
+make run/tests
+```
+
+
+## Developing and contributing
+Before start coding, enable the git hooks:
+```
+pre-commit install
+```
