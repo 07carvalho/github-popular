@@ -30,10 +30,13 @@ So I tried FastAPI with a combination of http requests packages, finally remaini
 |     10    |     513     |
 | **AVG Time** |   **505**   |
 
-Although the average time is not within expectations, this stack gives a clue to achieve a better performance
 
-#### Future improvements
-- [ ] Add cache to avoid hit the GitHub API in each request;
+### Adding cache
+To improve performance, it was included a pretty simple cache called `fastapi-cache2`, using an engine that store cache dada in memory. This option was chose to avoid add unnecessary complexity to this challenge.
+
+With this change, while the first request to evaluate a repo can long 500ms+, the others will take just `5ms`.
+### Future improvements
+- [ ] Add a more robust cache system, like Redis;
 - [ ] Go deep in `aiohttp` to improve usage and mock the requests properly;
 - [ ] Test another http requests packages;
 - [ ] Deploy the application in a web server;
