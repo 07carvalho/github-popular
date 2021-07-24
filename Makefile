@@ -7,7 +7,7 @@ install/python:
 copy/local/envs:
 	cp .env.dev .env
 
-run/flask:
+run/fastapi:
 	poetry run uvicorn app.main:app --reload
 
 run/tests:

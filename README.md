@@ -62,6 +62,11 @@ make run/flask
 ```
 
 
+## Health Checking
+Make a request to:
+- [http://localhost:8000/healthz](http://localhost:8000/healthz)
+
+
 ## Docs
 Check the API documentation in:
 - [http://localhost:8000/docs](http://localhost:8000/docs)
