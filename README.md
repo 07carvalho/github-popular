@@ -1,4 +1,43 @@
 # github-popular
+This RESTful API uses the official GitHub REST API to check if a repository is popular or not.
+
+This application follows the `factory` pattern, defining bounds per business logic. This architecture allows the application to grow in number of modules in a way easy to maintain and keeping readability.
+
+The GitHub service main logic remains in two files in `github` module:
+- `clients.py` keeps the requests to GitHub API.
+- `services.py` holds the application business logic, like the method that evaluate whether the provided GitHub repository is popular or not.
+
+This project also follows the SOLID and Clean Code principles.
+
+### Performance
+Once one of the evaluation criteria is that the `repo_popularity` request should respond within 0.5 second, I did many tests to improve the results.
+
+My first shot was with a Django/Django Rest Framework stack, which gave me a request responding with 600-700 milliseconds (quite bad).
+
+So I tried FastAPI with a combination of http requests packages, finally remaining with `aiohttp`, which brings better results in a series of requests tests:
+
+| # Request | Result (ms) |
+|:---------:|:-----------:|
+|     1     |     540     |
+|     2     |     521     |
+|     3     |     524     |
+|     4     |     484     |
+|     5     |     472     |
+|     6     |     532     |
+|     7     |     494     |
+|     8     |     493     |
+|     9     |     482     |
+|     10    |     513     |
+| **AVG Time** |   **505**   |
+
+Although the average time is not within expectations, this stack gives a clue to achieve a better performance
+
+#### Future improvements
+- [ ] Add cache to avoid hit the GitHub API in each request;
+- [ ] Go deep in `aiohttp` to improve usage and mock the requests properly;
+- [ ] Test another http requests packages;
+- [ ] Deploy the application in a web server;
+
 
 ## Tech Stack Used
 #### Python 3.8
