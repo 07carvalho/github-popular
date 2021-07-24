@@ -3,6 +3,8 @@ version: "3.7"
 services:
   api:
     build: .
+    env_file:
+      - .env
     volumes:
       - .:/code
     ports:
