@@ -1,7 +1,7 @@
 # github-popular
 This RESTful API uses the official GitHub REST API to check if a repository is popular or not.
 
-This application follows the `factory` pattern, defining bounds per business logic. This architecture allows the application to grow in number of modules in a way easy to maintain and keeping readability.
+This application follows the `factory` pattern, defining bounds per business logic. This architecture allows the application to grow in number of modules easily to maintain and read.
 
 The GitHub service main logic remains in two files in `github` module:
 - `clients.py` keeps the requests to GitHub API.
