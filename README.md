@@ -58,8 +58,13 @@ export GITHUB_PERSONAL_ACCESS_TOKEN=<token>
 
 Start the project
 ```
-make run/flask
+make run/fastapi
 ```
+
+
+## Health Checking
+Make a request to:
+- [http://localhost:8000/healthz](http://localhost:8000/healthz)
 
 
 ## Docs

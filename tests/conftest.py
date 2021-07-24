@@ -38,3 +38,8 @@ def unpopular():
 @pytest.fixture
 def error_response():
     return {"detail": "Not Found"}
+
+
+@pytest.fixture
+def healthy_response():
+    return {"result": "OK - healthy"}
